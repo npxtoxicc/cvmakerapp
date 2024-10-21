@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .jumbotron {
+            background-color: #343a40;
+            color: white;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">CV Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1 class="display-4">CV Generator</h1>
+        <p class="lead">Create your professional CV in minutes.</p>
+    </div>
+
+    <div class="container">
+        <section id="generate_cv">
+            <h2>Generate Your CV</h2>
+            <form action="{{ url_for('generate_cv') }}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+                </div>
+                <div class="form-group">
+                    <label for="education">Education</label>
+                    <textarea class="form-control" id="education" name="education" rows="3" placeholder="Enter your education details" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Experience</label>
+                    <textarea class="form-control" id="experience" name="experience" rows="3" placeholder="Enter your experience details" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="skills">Skills</label>
+                    <textarea class="form-control" id="skills" name="skills" rows="3" placeholder="Enter your skills" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Generate CV</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; by Rufat Azizzade. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
